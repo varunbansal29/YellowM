@@ -24,6 +24,10 @@ public class Sys1Manager
      
    }
    
+   public void removeEmployee(Employee emp){
+       
+       allEmployees.remove(emp);
+   }
    
    //public void getAllProjects()
    
