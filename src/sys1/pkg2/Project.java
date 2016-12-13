@@ -14,21 +14,21 @@ import java.util.ArrayList;
 public class Project
 {
     private static int number = 001;
-    private int projectNumber;
-    private String title;
-    private double budget;
-    private int crewMembersNeeded;
-    private int daysForCompletion;
+    private final int projectNumber;
+    private final String title;
+    private final double budget;
+    private final int teamMembersNeeded;
+    private final int daysForCompletion;
     private final ProjectStatus status;
     
-    ArrayList<Employee> crew = new ArrayList<Employee>();
+    ArrayList<Employee> team = new ArrayList<>();
     
     public Project(String ti, double bud, int mem, int days, ProjectStatus stat )
     {
         projectNumber = ++number;
         title = ti;
         budget = bud;
-        crewMembersNeeded = mem;
+        teamMembersNeeded = mem;
         daysForCompletion = days;
         status = stat;
     }
@@ -53,9 +53,9 @@ public class Project
         return budget;
     }
     
-    public int getCrewMembersNeeded()
+    public int getteamMembersNeeded()
     {
-        return crewMembersNeeded;
+        return teamMembersNeeded;
     }
     
     public int getDaysForCompletion()
@@ -63,19 +63,23 @@ public class Project
         return daysForCompletion;
     }
     
-    public void addEmployeeToCrew(Employee emp)
+    public void addEmployeeToteam(Employee emp)
     {
-        crew.add(emp);
+        team.add(emp);
         
-        System.out.println("Employee added to crew");
+        System.out.println("Employee added to team");
     }
     
-    public void removeEmployeeFromCrew(Employee emp)
+    public void removeEmployeeFromteam(Employee emp)
     {
-        crew.remove(emp);
+        team.remove(emp);
         
-        System.out.println("Employee removed to crew");
+        System.out.println("Employee removed from team");
     }
+    
+ 
+    
+    
     
 }
 
