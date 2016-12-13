@@ -4,10 +4,6 @@
  * and open the template in the editor.
  */
 package sys1.pkg2;
-
-
-import java.util.Date;
-import java.util.*;
 /**
  *
  * @author julian.dragoi
