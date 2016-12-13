@@ -5,7 +5,8 @@
  */
 package sys1.pkg2;
 
-import java.util.HashSet;
+import java.util.HashMap;
+
 
 /**
  *
@@ -13,20 +14,36 @@ import java.util.HashSet;
  */
 public class Sys1Manager
 {
-   HashSet<Project> allProjects = new HashSet<>();
-   HashSet<Employee> allEmployees = new HashSet<>();
+   HashMap<String,Project> allProjects;
+   HashMap<String,Employee> allEmployees;
+
+    public Sys1Manager() {
+        this.allEmployees = new HashMap<>();
+        this.allProjects = new HashMap<>();
+    }
    
    
    
-   public void addEmployeeToList(Employee emp){
+   public void addEmployeeToList(String empid, Employee emp){
        
-      allEmployees.add(emp);
+      allEmployees.put(empid,emp);
      
    }
    
-   public void removeEmployee(Employee emp){
+   public void removeEmployee(String empid, Employee emp){
        
-       allEmployees.remove(emp);
+       allEmployees.remove(empid,emp);
+   }
+   
+   
+   public Employee getEmployee(Employee emp){
+       
+       if(emp != null){
+           return emp;
+       }
+       else
+       return null;
+       
    }
    
    //public void getAllProjects()
